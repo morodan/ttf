@@ -26,6 +26,7 @@ class SpecialTwoTest extends PHPUnit_Framework_TestCase
             $this->assertEquals(200, $response->getStatusCode());
             $data = json_decode($response->getBody(), true);
             $this->assertEquals(90, $data['Y']);
+            $this->assertEquals('T', $data['X']);
     }
 
     public function testPost_case2_SpecialTwoClient()
@@ -41,6 +42,7 @@ class SpecialTwoTest extends PHPUnit_Framework_TestCase
             $this->assertEquals(200, $response->getStatusCode());
             $data = json_decode($response->getBody(), true);
             $this->assertEquals(130, $data['Y']);
+            $this->assertEquals('S', $data['X']);
     }
 
 }

@@ -13,6 +13,7 @@ I tested the algo only under PHP 7.0.8, but it's should work properly under othe
 - install [`Composer`](https://getcomposer.org/) if you don't have it
 - install [`PHPUnit`](https://phpunit.de/getting-started.html) if you want to run tests
 - install [`Guzzle`](http://guzzle.readthedocs.io/en/latest/overview.html#installation)
+
 *Note: Please use google to find details about installation for requested tools. For issues with requirements, please contact me.*
 
 
@@ -20,15 +21,22 @@ I tested the algo only under PHP 7.0.8, but it's should work properly under othe
 ###Inputs
 We have the following variables: 
 `A: bool`
+
 `B: bool`
+
 `C: bool`
+
 `D: int`
+
 `E: int`
+
 `F: int`
 
 ###Outputs
 The outputs are defined as: 
+
 `X: enum[S,R,T]`
+
 `Y: real/float/decimal`
 
 ###Mappings
@@ -36,12 +44,18 @@ The assignment consists of a 'base mapping', and two specialized mappings that o
 
 ####Base
 `A && B && !C => X = S`
+
 `A && B && C => X = R`
+
 `!A && B && C => X =T`
+
 `[other] => [error]`
 
+
 `X = S => Y = D + (D * E / 100)`
+
 `X = R => Y = D + (D * (E - F) / 100)`
+
 `X = T => Y = D - (D * F / 100)`
 
 ####Specialized 1
@@ -49,6 +63,7 @@ The assignment consists of a 'base mapping', and two specialized mappings that o
 
 ####Specialized 2
 `A && B && !C => X = T`
+
 `A && !B && C => X = S`
 
 `X = S => Y = F + D + (D * E / 100)`

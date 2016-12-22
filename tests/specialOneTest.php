@@ -26,6 +26,7 @@ class SpecialOneTest extends PHPUnit_Framework_TestCase
             $this->assertEquals(200, $response->getStatusCode());
             $data = json_decode($response->getBody(), true);
             $this->assertEquals(220, $data['Y']);
+            $this->assertEquals('R', $data['X']);
     }
 
 }

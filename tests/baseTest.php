@@ -26,6 +26,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
             $this->assertEquals(200, $response->getStatusCode());
             $data = json_decode($response->getBody(), true);
             $this->assertEquals(120, $data['Y']);
+            $this->assertEquals('S', $data['X']);
     }
 
     public function testPost_case2_BaseClient()
@@ -41,6 +42,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
             $this->assertEquals(200, $response->getStatusCode());
             $data = json_decode($response->getBody(), true);
             $this->assertEquals(110, $data['Y']);
+            $this->assertEquals('R', $data['X']);
     }
 
     public function testPost_case3_BaseClient()
@@ -56,6 +58,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
             $this->assertEquals(200, $response->getStatusCode());
             $data = json_decode($response->getBody(), true);
             $this->assertEquals(90, $data['Y']);
+            $this->assertEquals('T', $data['X']);
     }
 
     public function testPost_caseOther_BaseClient()
