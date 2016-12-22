@@ -96,7 +96,7 @@ var_dump(useCurl());
 ```
 5. Save the code bellow to a file named `curl.php` or whatever
 6. on another terminal run the command: `php curl.php`
-7. if everything are ok you will see: `string(24) "{"success":true,"X":"S",Y":120}"`
+7. if everything are ok you will see: `string(24) "{"success":true,"X":"S","Y":120}"`
 
 ##How to test the application
 - open a terminal
