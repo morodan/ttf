@@ -60,7 +60,7 @@ class Base implements BaseInterface, ManageMappingInterface
 
     public function gotTheResult(){
         if ($this->_y !== null) {
-            return ['success' => true, 'Y' => $this->_y];
+            return ['success' => true, 'X' => $this->_x, 'Y' => $this->_y];
         } else {
             return $this->error('Y is invalid or null');
         }
