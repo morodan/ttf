@@ -1,11 +1,11 @@
-#Demo API
+# Demo API
 Here is a demo algorithm which is implemented in a SOLID manner and expose the results in a simple REST api. 
 
 Implementation is based on Slim Framework and for unit testing I used PHPUnit and Guzzle.
 
 I tested the algo only under PHP 7.0.8, but it's should work properly under other PHP version greater than 5.3.
 
-##Requirements
+## Requirements
 
 - install PHP (latest version)
 - install [`cURL`](https://curl.haxx.se/)
@@ -17,8 +17,8 @@ I tested the algo only under PHP 7.0.8, but it's should work properly under othe
 *Note: Please use google to find details about installation for requested tools. For issues with requirements, please contact me.*
 
 
-##The theory
-###Inputs
+## The theory
+### Inputs
 We have the following variables: 
 `A: bool`
 
@@ -32,17 +32,17 @@ We have the following variables:
 
 `F: int`
 
-###Outputs
+### Outputs
 The outputs are defined as: 
 
 `X: enum[S,R,T]`
 
 `Y: real/float/decimal`
 
-###Mappings
+### Mappings
 The assignment consists of a 'base mapping', and two specialized mappings that override / extend the base mapping.
 
-####Base
+#### Base
 `A && B && !C => X = S`
 
 `A && B && C => X = R`
@@ -58,21 +58,22 @@ The assignment consists of a 'base mapping', and two specialized mappings that o
 
 `X = T => Y = D - (D * F / 100)`
 
-####Specialized 1
+#### Specialized 1
 `X = R => Y = 2D + (D * E / 100)`
 
-####Specialized 2
+#### Specialized 2
 `A && B && !C => X = T`
 
 `A && !B && C => X = S`
 
 `X = S => Y = F + D + (D * E / 100)`
 
-##How to run the application
+## How to run the application
 1. Open terminal, go to application folder
 2. start the web server with the command `php -S localhost:8080`
 3. Open Postman or HttpRequester to see the application resposes
 4. Or you can use curl to check the application. Here is a example code for this:
+
 ```php
 function useCurl()
 {
@@ -94,11 +95,12 @@ function useCurl()
 
 var_dump(useCurl());
 ```
+
 5. Save the code bellow to a file named `curl.php` or whatever
 6. on another terminal run the command: `php curl.php`
 7. if everything are ok you will see: `string(32) "{"success":true,"X":"S","Y":120}"`
 
-##How to test the application
+## How to test the application
 - open a terminal
 - in the current folder run the command: `phpunit tests`
 - you will see the tests results.
